@@ -1,0 +1,6 @@
+git init
+echo "node_modules/" > .gitignore
+echo ".env" >> .gitignore
+echo "artifacts/" >> .gitignore
+echo "cache/" >> .gitignore
+echo "deployments/addresses.json" >> .gitignore # We ignore the generated file, but keep the folder
