@@ -5,7 +5,7 @@
     {
       "test": "Deposit ETH",
       "status": "pass",
-      "detail": "Deposited 0.5 ETH in tx: 0xe86d7a3fd52b4d319ca5e23dea4deb7bc912d83895635464dcf869d92900299a"
+      "detail": "Deposited 0.5 ETH in tx: 0x25fb081a26f4be68d2994030d5316dccd9b5324b6499826bd44ef03fbe6c318c"
     },
     {
       "test": "Index Deposit",
