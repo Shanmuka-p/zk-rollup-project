@@ -22,16 +22,6 @@ services:
       timeout: 5s
       retries: 5
 
-  deployer:
-    image: node:18-alpine
-    working_dir: /app
-    volumes:
-      - .:/app
-    depends_on:
-      - hardhat
-    # We added 'npm install' here to ensure the Linux dependencies are perfectly intact
-    command: sh -c "npm install && sleep 5 && npx hardhat run scripts/deploy.js --network localhost"
-
   backend:
     build: ./backend
     ports:
@@ -47,16 +37,12 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost:4000/state"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
+      hardhat:
+        condition: service_started
 
   flutter:
     build: ./flutter_app
     ports:
-      - "8080:80" # Maps local port 8080 to container's port 80 (nginx)
+      - "8081:80"
     depends_on:
-      backend:
-        condition: service_healthy
+      - backend
