@@ -1,0 +1,36 @@
+{
+  "passed": 6,
+  "failed": 0,
+  "results": [
+    {
+      "test": "Deposit ETH",
+      "status": "pass",
+      "detail": "Deposited 0.5 ETH in tx: 0xe86d7a3fd52b4d319ca5e23dea4deb7bc912d83895635464dcf869d92900299a"
+    },
+    {
+      "test": "Index Deposit",
+      "status": "pass",
+      "detail": "Deposit found in database"
+    },
+    {
+      "test": "Valid Intent",
+      "status": "pass",
+      "detail": "Status code: 201"
+    },
+    {
+      "test": "Invalid Intent",
+      "status": "pass",
+      "detail": "Rejected correctly with status: 400"
+    },
+    {
+      "test": "Relayer Batching",
+      "status": "pass",
+      "detail": "Batch committed on-chain"
+    },
+    {
+      "test": "Batch Explorer API",
+      "status": "pass",
+      "detail": "Found 1 batches in DB"
+    }
+  ]
+}
